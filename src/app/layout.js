@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
 
 /*
 const geistSans = localFont({
@@ -27,20 +29,25 @@ export default function RootLayout({ children }) {
       </body> */}
       <body>
 
-        <h1><a href="/">WEB</a></h1>
+        <h1>
+          <Image src="/home_google_icon.png" 
+            alt="home icon" 
+            width={48} height={48}
+          ></Image>
+          <Link href="/">WEB</Link></h1>
         <nav>
           <ol>
-            <li><a href="/read/1">html</a></li>
-            <li><a href="/read/2">css</a></li>
-            <li><a href="/read/3">javascript</a></li>
+            <li><Link href="/read/1">html</Link></li>
+            <li><Link href="/read/2">css</Link></li>
+            <li><Link href="/read/3">javascript</Link></li>
           </ol>
         </nav>
 
         {children}
 
         <ul>
-          <li><a href="/create">Create</a></li>
-          <li><a href="/update/1">Update</a></li>
+          <li><Link href="/create">Create</Link></li>
+          <li><Link href="/update/1">Update</Link></li>
           <li><button>delete</button></li>
         </ul>
 
