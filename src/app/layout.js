@@ -1,9 +1,9 @@
 // "use client"
 
-import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import Control from "./read/[id]/control";
 // import { useEffect, useState } from "react";
 
 /*
@@ -39,7 +39,7 @@ export default async function RootLayout({ children }) {
   },[]) // 서버에 요청을 보내서 출력하기 위해서는 useEffect를 반드시 입력
   */
 
-  const response = await fetch('http://localhost:9999/topics'); // 기다려라
+  const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'topics'); // 기다려라
   const topics = await response.json(); // json->object
 
   return (
@@ -68,11 +68,7 @@ export default async function RootLayout({ children }) {
 
         {children}
 
-        <ul>
-          <li><Link href="/create">Create</Link></li>
-          <li><Link href="/update/1">Update</Link></li>
-          <li><button>delete</button></li>
-        </ul>
+        <Control/>
 
       </body>
     </html>
