@@ -15,7 +15,7 @@ export default function Create() {
       },
       body: JSON.stringify({title, body}) // 문자열로 바꿈 (object->json)
     }
-    fetch(process.env.NEXT_PUBLIC_API_URL+'topics', options)
+    fetch(process.env.NEXT_PUBLIC_API_URL+'topics/', options)
       .then(res=>res.json()) // 결과를 객체로 변환
       .then(result=>{
         console.log(result)
