@@ -39,7 +39,7 @@ export default async function RootLayout({ children }) {
   },[]) // 서버에 요청을 보내서 출력하기 위해서는 useEffect를 반드시 입력
   */
 
-  const response = await fetch(process.env.NEXT_PUBLIC_API_URL+'topics'); // 기다려라
+  const response = await fetch(process.env.+'topics'); // 기다려라
   const topics = await response.json(); // json->object
 
   return (
